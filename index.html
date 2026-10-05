@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEXORA INVESTMENTS</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#071426;color:#fff;min-height:100vh}
+    header{background:#020914;border-bottom:1px solid #183451;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
+    .logo{color:#2196ff;font-size:20px;font-weight:800;letter-spacing:.2px}
+    .container{width:92%;max-width:620px;margin:20px auto;padding-bottom:30px}
+    .card{background:#fff;color:#17202a;border-radius:16px;padding:18px;margin-bottom:15px;box-shadow:0 5px 18px rgba(0,0,0,.22)}
+    h1,h2,h3{margin-bottom:12px}.center{text-align:center}.muted{color:#8fa3b8;font-size:14px}.small{font-size:13px}.blue{color:#1685ff}.green{color:#168f45}.orange{color:#b36b00}.red{color:#c62828}
+    button{width:100%;border:0;border-radius:11px;padding:14px;margin-top:10px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:#1685ff;color:#fff}.secondary{background:#26384d;color:#fff}.success{background:#168f45;color:#fff}.danger{background:#d9363e;color:#fff}.topbtn{width:auto;margin:0;padding:10px 13px;background:#1685ff;color:#fff}
+    input{width:100%;padding:13px;border:1px solid #ccd5df;border-radius:10px;font-size:15px;outline:none;margin-top:6px}label{display:block;color:#17202a;font-weight:700;margin-top:13px}.notice{background:#102238;border:1px solid #244566;color:#c9d6e5;border-radius:12px;padding:13px;line-height:1.5;font-size:13px;margin-bottom:15px}.notice.light{background:#eef6ff;border-color:#d3e6fb;color:#234}.notice.warn{background:#fff4d6;border-color:#f0d27a;color:#684d00}
+    .saldo{background:linear-gradient(135deg,#0b4380,#1685ff);border-radius:17px;padding:22px;margin-bottom:15px}.saldo small{opacity:.9}.saldo strong{display:block;font-size:31px;margin-top:7px}.welcome{margin-bottom:15px}.welcome h2{font-size:22px}.menu{display:grid;gap:11px}.menu button{margin:0;background:#fff;color:#17202a;text-align:left}.menu button span{display:inline-block;width:30px}
+    .row{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid #e5e5e5}.row:last-child{border-bottom:0}.value{font-weight:800;text-align:right}.pill{display:inline-block;padding:6px 9px;border-radius:8px;background:#fff3cd;color:#856404;font-weight:700;font-size:12px}.pill.ok{background:#e8f8ef;color:#17652e}.pill.bad{background:#fde8e8;color:#a11}
+    .plan-icon{font-size:35px;margin-bottom:8px}.plan-title{font-size:19px;font-weight:800}.plan-price{font-size:22px;font-weight:800;color:#1685ff}.plan-return{font-weight:800;color:#168f45}.grid{display:grid;gap:14px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:420px){.two{grid-template-columns:1fr}}
+    .auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px;background:linear-gradient(145deg,#020914,#071426 55%,#0b4380)}.authbox{width:100%;max-width:430px}.brand{text-align:center;margin-bottom:20px}.brand .logo{font-size:26px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#102238;padding:5px;border-radius:11px;margin-bottom:15px}.tabs button{margin:0;background:transparent;color:#b9c7d8}.tabs button.active{background:#1685ff;color:#fff}.formbox{background:#fff;border-radius:18px;padding:20px}.formbox h2{color:#17202a}.formbox label{color:#17202a}.formbox .notice{margin-top:14px}.msg{display:none;padding:12px;border-radius:10px;margin-bottom:12px;font-size:14px}.msg.show{display:block}.msg.ok{background:#e8f8ef;color:#17652e}.msg.err{background:#fde8e8;color:#a11}.back{margin-top:10px}
+    .mpesa{background:#e8f8ef;color:#123;border-radius:12px;padding:15px;margin-bottom:16px}.mpesa .number{font-size:25px;font-weight:800;color:#168f45;margin:6px 0}.empty{text-align:center;padding:20px;color:#6b7885}
+    .admin-card{background:#fff;color:#17202a;border-radius:15px;padding:17px;margin-bottom:14px}.admin-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.admin-actions button{margin:0}.lock{background:#fff;color:#222;border-radius:15px;padding:25px;text-align:center}
+    .footer{text-align:center;color:#7890a8;font-size:12px;padding:20px 0}.hidden{display:none!important}
+    .referral-card{background:linear-gradient(135deg,#0b4380,#1685ff);color:#fff;border-radius:17px;padding:18px;margin-bottom:15px}.referral-card h3{margin-bottom:7px}.referral-code{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:11px;text-align:center;font-size:18px;font-weight:800;letter-spacing:1px;margin:10px 0}.referral-link{background:#fff;color:#17304a;border-radius:9px;padding:10px;font-size:12px;word-break:break-all}.bonus{font-size:13px;margin-top:8px}.ref-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.ref-actions button{margin-top:10px}.support{margin-top:15px}.supportbtn{display:block;width:100%;padding:14px 16px;border-radius:10px;background:#1685ff;color:#fff;text-decoration:none;text-align:center;font-weight:bold;margin-top:12px}.supportbtn:active{transform:scale(.99)}
+    button:disabled{opacity:.65;cursor:wait}.security-note,.professional-note{display:flex;gap:10px;align-items:flex-start;background:#f5f8fc;border:1px solid #dfe7f0;color:#314255;border-radius:12px;padding:13px;margin-top:14px;font-size:13px;line-height:1.45}.security-note span{font-size:18px}.security-note small{display:block;color:#6b7885;margin-top:2px}.professional-note{color:#314255;background:#f7fafc}.professional-note span{color:#687789}.admin-title{background:linear-gradient(135deg,#0b4380,#1685ff);border-radius:16px;padding:18px;margin-bottom:15px}.admin-title h2{margin-bottom:4px}.admin-title .muted{color:#e5f0ff}
+  </style>
+  <style>
+    #app{min-height:100vh}.view{display:none}.view.active{display:block}.notice{margin-top:12px;padding:12px;border-radius:12px;background:#eef5ff;color:#173a63;font-size:13px}.admin-card{margin-bottom:14px}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <section id="view-login" class="view active">
+      <div class="auth">
+        <div class="authbox">
+          <div class="brand">
+            <div class="logo">NEXORA INVESTMENTS</div>
+            <div class="muted">Acesso à sua conta</div>
+          </div>
+          <div class="tabs">
+            <button id="tabLogin" class="active">Entrar</button>
+            <button id="tabCreate">Criar conta</button>
+          </div>
+          <div class="formbox">
+            <div id="authMsg" class="msg"></div>
+            <section id="loginForm">
+              <h2>Iniciar sessão</h2>
+              <label>Telefone</label>
+              <input id="loginId" type="tel" placeholder="Seu telefone">
+              <label>Senha</label>
+              <input id="loginPass" type="password" placeholder="Sua senha">
+              <button id="loginBtn" class="primary">ENTRAR</button>
+            </section>
+            <section id="createForm" class="hidden">
+              <h2>Criar conta</h2>
+              <label>Nome completo</label>
+              <input id="nome" type="text" placeholder="Seu nome completo">
+              <label>Telefone</label>
+              <input id="tel" type="tel" placeholder="Ex.: 84 123 4567">
+              <label>Senha</label>
+              <input id="pass" type="password" placeholder="Mínimo de 6 caracteres">
+              <label>Confirmar senha</label>
+              <input id="pass2" type="password" placeholder="Repita a sua senha">
+              <button id="createBtn" class="primary">CRIAR CONTA</button>
+            </section>
+            <div class="security-note">
+              <span>🔐</span>
+              <div><b>Modo de teste</b><small>Esta versão não usa Firebase. Os dados ficam guardados neste navegador.</small></div>
+            </div>
+          </div>
+          <div class="footer">NEXORA INVESTMENTS</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-dashboard" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="perfil">👤 Perfil</button>
+      </header>
+      <main class="container">
+        <div class="welcome">
+          <h2>Olá, <span id="dashNome">Utilizador</span> 👋</h2>
+          <div class="muted">Acompanhe a sua conta e as suas operações.</div>
+        </div>
+        <div class="saldo">
+          <small>Saldo disponível</small>
+          <strong><span id="dashSaldo">0</span> MT</strong>
+        </div>
+        <div id="referralBox"></div>
+        <div id="dashPlano"></div>
+        <div class="menu">
+          <button data-go="deposito"><span>💰</span>Depósito</button>
+          <button data-go="planos"><span>📊</span>Planos</button>
+          <button data-go="levantamento"><span>💸</span>Levantamento</button>
+          <button data-go="perfil"><span>👤</span>Perfil</button>
+          <button id="admBtn" class="hidden" data-go="admin"><span>⚙️</span>Área administrativa</button>
+          <button id="logoutBtn"><span>🚪</span>Sair da conta</button>
+        </div>
+        <div class="support">
+          <a class="supportbtn" href="https://chat.whatsapp.com/KBY1ks8VfrzEkanDmf1HFk" target="_blank">💬 Atendimento ao cliente — WhatsApp</a>
+        </div>
+        <div class="footer">NEXORA INVESTMENTS</div>
+      </main>
+    </section>
+
+    <section id="view-planos" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="dashboard">← Voltar</button>
+      </header>
+      <main class="container">
+        <h2 class="center">📊 Planos NEXORA</h2>
+        <p class="muted center">Escolha o plano que pretende solicitar.</p>
+        <div id="listaPlanos" class="grid"></div>
+      </main>
+    </section>
+
+    <section id="view-compra" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="planos">← Planos</button>
+      </header>
+      <main class="container">
+        <h2 class="center">📊 Solicitar plano</h2>
+        <div id="compraConteudo"></div>
+      </main>
+    </section>
+
+    <section id="view-deposito" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="dashboard">← Voltar</button>
+      </header>
+      <main class="container">
+        <h2 class="center">💰 Depósito</h2>
+        <div class="card">
+          <div class="mpesa">
+            <b>📱 1. Faça a transferência pelo M-Pesa</b>
+            <p>Envie o valor para:</p>
+            <div class="number">858861983</div>
+            <b>LEANDRO MABOTE</b>
+            <p class="small" style="margin-top:8px">O PIN do M-Pesa deve ser digitado somente no aplicativo/menu oficial do M-Pesa. <b>Não escreva o seu PIN neste site.</b></p>
+          </div>
+          <label>Valor do depósito (MT)</label>
+          <input id="depValor" type="number" min="1" placeholder="Ex.: 300">
+          <label>Seu número M-Pesa</label>
+          <input id="depTel" type="tel" placeholder="Número usado na transferência">
+          <label>ID / Referência da transação</label>
+          <input id="depRef" type="text" placeholder="Referência mostrada pelo M-Pesa">
+          <label style="display:flex;align-items:flex-start;gap:9px;font-weight:600;margin-top:15px">
+            <input id="depConfirm" type="checkbox" style="width:20px;height:20px;margin:0;flex:none">
+            <span>Confirmo que realizei esta transferência e os dados informados estão corretos.</span>
+          </label>
+          <button id="depBtn" class="primary">✅ CONFIRMAR TRANSFERÊNCIA</button>
+          <div id="depMsg" class="msg"></div>
+        </div>
+      </main>
+    </section>
+
+    <section id="view-levantamento" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="dashboard">← Voltar</button>
+      </header>
+      <main class="container">
+        <h2 class="center">💸 Levantamento</h2>
+        <div class="card">
+          <div class="saldo">
+            <small>Saldo disponível</small>
+            <strong><span id="levSaldo">0</span> MT</strong>
+          </div>
+          <label>Valor do levantamento</label>
+          <input id="levValor" type="number" min="1">
+          <label>Número M-Pesa para receber</label>
+          <input id="levTel" type="tel">
+          <label>Nome do titular</label>
+          <input id="levNome" type="text">
+          <button id="levBtn" class="primary">SOLICITAR LEVANTAMENTO</button>
+          <div id="levMsg" class="msg"></div>
+        </div>
+      </main>
+    </section>
+
+    <section id="view-perfil" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="dashboard">← Voltar</button>
+      </header>
+      <main class="container">
+        <div class="card center">
+          <div class="avatar" id="avatar">N</div>
+          <h2 id="profNome">Utilizador</h2>
+          <p class="muted" id="profTel">--</p>
+        </div>
+        <div class="saldo">
+          <small>Saldo disponível</small>
+          <strong><span id="profSaldo">0</span> MT</strong>
+        </div>
+        <div class="card">
+          <h3>Dados da conta</h3>
+          <div class="row"><span>Nome</span><b id="profNome2">--</b></div>
+          <div class="row"><span>Telefone</span><b id="profTel2">--</b></div>
+          <div class="row"><span>Conta</span><b>Ativa</b></div>
+        </div>
+        <div id="profPedidos"></div>
+      </main>
+    </section>
+
+    <section id="view-admin" class="view">
+      <header>
+        <div class="logo">NEXORA INVESTMENTS</div>
+        <button class="topbtn" data-go="dashboard">← Voltar</button>
+      </header>
+      <main class="container">
+        <h2>⚙️ Área administrativa</h2>
+        <div id="adminMsg" class="msg"></div>
+        <div id="adminConteudo"></div>
+      </main>
+    </section>
+  </div>
+
+  <script>
+    const PLANOS = [
+      ["Nexora Start",300,30,"⚙️"],
+      ["Nexora Basic",500,50,"💧"],
+      ["Nexora Plus",800,80,"⚡"],
+      ["Nexora Silver",1000,100,"🔋"],
+      ["Nexora Gold",1300,130,"🛠️"],
+      ["Nexora Premium",1500,150,"🏗️"],
+      ["Nexora Platinum",1800,180,"🔧"],
+      ["Nexora Diamond",2000,200,"⚙️"],
+      ["Nexora Elite",2500,250,"🚜"],
+      ["Nexora Master",3000,300,"🏭"],
+      ["Nexora VIP",3500,350,"👑"]
+    ];
+
+    function plans(){return PLANOS.map(p=>({nome:p[0],valor:p[1],rendimentoDiario:p[2],icone:p[3]}));}
+    function findPlan(nome,valor){return plans().find(p=>p.nome===nome && Number(p.valor)===Number(valor));}
+    function norm(v){return String(v||"").replace(/\D/g,"");}
+    function fmt(n){return Number(n||0).toLocaleString("pt-PT",{maximumFractionDigits:2});}
+    function esc(v){return String(v??"").replace(/[&<>\'\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[m]));}
+    function showMsg(id,msg,ok=false){const el=document.getElementById(id);if(!el)return;el.textContent=msg;el.className="msg show "+(ok?"ok":"err");}
+    function friendlyError(){return "Não foi possível concluir a operação. Tente novamente.";}
+    function read(key,fallback=null){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v);}catch{return fallback;}}
+    function write(key,value){localStorage.setItem(key,JSON.stringify(value));}
+    function getAccounts(){const list=read("nexora_contas",[]);return Array.isArray(list)?list:[];}
+    function saveAccounts(list){write("nexora_contas",list);}
+    function sessionPhone(){return norm(localStorage.getItem("nexora_sessao")||"");}
+    function currentUser(){const phone=sessionPhone();if(!phone)return null;const contas=getAccounts();return contas.find(c=>norm(c.telefone)===phone)||null;}
+    function requireLogin(){const user=currentUser();if(!user){localStorage.removeItem("nexora_sessao");go("login");return null;}return user;}
+    async function logout(){localStorage.removeItem("nexora_sessao");go("login");}
+    function isAdmin(){const user=currentUser();return !!user && norm(user.telefone)==="852600604";}
+    function getAdminPassword(){return "NEXORA@2026";}
+    function adminUnlocked(){return sessionStorage.getItem("nexora_admin_ok")==="1";}
+    function createAccount({nome,telefone,senha,refCode}){const clean=norm(telefone);if(!nome||clean.length<7||!senha)throw new Error("dados");const contas=getAccounts();if(contas.some(c=>norm(c.telefone)===clean))throw new Error("exists");const conta={nome:nome.trim(),telefone:clean,senha,saldo:50,referralCode:referralCodeFor({telefone:clean})};contas.push(conta);saveAccounts(contas);awardReferralBonus(refCode,conta);localStorage.setItem("nexora_sessao",clean);return currentUser()||conta;}
+    function login(identifier,senha){const id=norm(identifier);const conta=getAccounts().find(c=>norm(c.telefone)===id);if(conta && senha===conta.senha){localStorage.setItem("nexora_sessao",norm(conta.telefone));return conta;}throw new Error("login");}
+    function getUserProfile(){const conta=currentUser();if(!conta)return null;return {...conta,referralCode:conta.referralCode||referralCodeFor(conta),saldo:Number(conta.saldo??50)};}
+    function updateCurrentUser(fields){const phone=sessionPhone();const contas=getAccounts();const i=contas.findIndex(c=>norm(c.telefone)===phone);if(i<0)throw new Error("user");contas[i]={...contas[i],...fields};saveAccounts(contas);return contas[i];}
+    function referralCodeFor(account){if(!account)return "";const n=norm(account.telefone);return "NEX"+(n.slice(-6)||"000000");}
+    function getReferralLink(){const p=getUserProfile();if(!p)return "";const code=p.referralCode||referralCodeFor(p);const base=location.href.split("?")[0].split("#")[0];return base+"?ref="+encodeURIComponent(code);}
+    function getReferralCodeFromUrl(){try{return new URLSearchParams(location.search).get("ref")||"";}catch{return "";}}
+    function ensureReferralCodes(){const contas=getAccounts();let changed=false;contas.forEach(c=>{if(!c.referralCode){c.referralCode=referralCodeFor(c);changed=true;}});if(changed)saveAccounts(contas);}
+    function awardReferralBonus(refCode,newUser){if(!refCode||!newUser)return false;const code=String(refCode).trim().toUpperCase();const contas=getAccounts();const inviter=contas.find(c=>String(c.referralCode||referralCodeFor(c)).toUpperCase()===code);if(!inviter||norm(inviter.telefone)===norm(newUser.telefone))return false;if(newUser.referrerCode||newUser.referralBonusPaid)return false;const i=contas.findIndex(c=>norm(c.telefone)===norm(inviter.telefone));if(i<0)return false;contas[i]={...contas[i],saldo:Number(contas[i].saldo??50)+5,referralBonusTotal:Number(contas[i].referralBonusTotal||0)+5};const j=contas.findIndex(c=>norm(c.telefone)===norm(newUser.telefone));if(j>=0)contas[j]={...contas[j],referrerCode:code,referralBonusPaid:true};saveAccounts(contas);return true;}
+    function renderReferral(){const box=document.getElementById("referralBox");if(!box)return;const p=getUserProfile();if(!p){box.innerHTML="";return;}const code=p.referralCode||referralCodeFor(p);const link=getReferralLink();box.innerHTML=`<div class="referral-card"><h3>🎁 Convide amigos</h3><div>Convide novos utilizadores e receba <b>5 MT</b> de bônus por cada convite válido.</div><div class="referral-code">${esc(code)}</div><div class="referral-link" id="refLinkText">${esc(link)}</div><div class="ref-actions"><button class="secondary" id="copyRefBtn">📋 Copiar link</button><button class="primary" id="shareRefBtn">📤 Partilhar</button></div><div class="bonus">💰 Bônus recebido: <b>${fmt(p.referralBonusTotal||0)} MT</b></div></div>`;document.getElementById("copyRefBtn").onclick=async()=>{try{await navigator.clipboard.writeText(link);showToast("Link de convite copiado.")}catch{showToast("Copie o link manualmente.")}};document.getElementById("shareRefBtn").onclick=async()=>{if(navigator.share){try{await navigator.share({title:"NEXORA INVESTMENTS",text:"Crie a sua conta pelo meu link de convite.",url:link})}catch(e){}}else{try{await navigator.clipboard.writeText(link);showToast("Link copiado. Agora pode enviar aos seus contactos.")}catch{showToast("Copie o link manualmente.")}}};}
+    function showToast(msg){let t=document.getElementById("nexoraToast");if(!t){t=document.createElement("div");t.id="nexoraToast";t.style.cssText="position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:#020914;color:#fff;padding:12px 16px;border-radius:10px;z-index:99;box-shadow:0 5px 20px rgba(0,0,0,.3);font-size:13px";document.body.appendChild(t)}t.textContent=msg;t.style.display="block";clearTimeout(t._tm);t._tm=setTimeout(()=>t.style.display="none",2200)}
+    function getRequests(key){return read(key,[])||[];}
+    function saveRequests(key,list){write(key,list);}
+    function addRequest(key,item){const list=getRequests(key);const user=currentUser();const record={id:Date.now().toString()+Math.random().toString(36).slice(2),...item,usuarioTelefone:user?.telefone||sessionPhone(),usuarioNome:user?.nome||"",estado:"Aguardando confirmação",createdAt:new Date().toISOString()};list.unshift(record);saveRequests(key,list);return record;}
+    async function getMyDocs(collectionName){const key=collectionName==="compras"?"nexora_compras":collectionName==="depositos"?"nexora_depositos":"nexora_levantamentos";const phone=sessionPhone();return getRequests(key).filter(r=>norm(r.usuarioTelefone||r.telefone||"")==phone);}
+    async function getLatest(collectionName){const list=await getMyDocs(collectionName);return list[0]||null;}
+    async function createDeposit(item){return addRequest("nexora_depositos",item);}
+    async function createPurchase(item){return addRequest("nexora_compras",item);}
+    async function createWithdrawal(item){return addRequest("nexora_levantamentos",item);}
+    async function getAdminRequests(){if(!isAdmin())throw new Error("admin-only");const out=[];for(const [key,type] of [["nexora_depositos","deposito"],["nexora_levantamentos","levantamento"],["nexora_compras","compra"]]){getRequests(key).forEach(x=>{if(x.estado==="Aguardando confirmação")out.push({type,...x});});}return out.sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));}
+    function updateRequest(type,id,changes){const key=type==="deposito"?"nexora_depositos":type==="levantamento"?"nexora_levantamentos":"nexora_compras";const list=getRequests(key);const i=list.findIndex(x=>x.id===id);if(i<0)throw new Error("not-found");list[i]={...list[i],...changes};saveRequests(key,list);return list[i];}
+    async function approveRequest(type,id){if(!isAdmin())throw new Error("admin-only");const key=type==="deposito"?"nexora_depositos":type==="levantamento"?"nexora_levantamentos":"nexora_compras";const list=getRequests(key);const r=list.find(x=>x.id===id);if(!r)throw new Error("not-found");if(r.estado!="Aguardando confirmação")throw new Error("processed");if(type==="deposito"){const alvo=getAccounts().find(c=>norm(c.telefone)===norm(r.usuarioTelefone||r.telefone||""));if(!alvo)throw new Error("user");const saldo=Number(alvo.saldo??50);const contas=getAccounts();const i=contas.findIndex(c=>norm(c.telefone)===norm(alvo.telefone));contas[i]={...contas[i],saldo:saldo+Number(r.valor||0)};saveAccounts(contas);updateRequest(type,id,{estado:"Confirmado",creditado:true,dataConfirmacao:new Date().toISOString()});}else if(type==="levantamento"){const alvo=getAccounts().find(c=>norm(c.telefone)===norm(r.usuarioTelefone||r.telefone||""));if(!alvo)throw new Error("user");const saldo=Number(alvo.saldo??50);const valor=Number(r.valor||0);if(valor>saldo)throw new Error("saldo");const contas=getAccounts();const i=contas.findIndex(c=>norm(c.telefone)===norm(alvo.telefone));contas[i]={...contas[i],saldo:saldo-valor};saveAccounts(contas);updateRequest(type,id,{estado:"Confirmado",debitado:true,dataConfirmacao:new Date().toISOString()});}else{const valor=Number(r.valor||0);const rendimento=Number(r.rendimentoDiario||valor*0.10);updateRequest(type,id,{estado:"Confirmado",ativado:true,rendimentoDiario:rendimento,dataAtivacao:new Date().toISOString(),dataConfirmacao:new Date().toISOString()});}}
+    async function rejectRequest(type,id){if(!isAdmin())throw new Error("admin-only");updateRequest(type,id,{estado:"Reprovado",dataReprovacao:new Date().toISOString()});}
+    function go(view){if(view==='login'){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById('view-login').classList.add('active');return}if(!currentUser()){localStorage.removeItem('nexora_sessao');go('login');return}if(view==='admin'){if(!isAdmin()){view='dashboard';}else if(!adminUnlocked()){adminConteudo.innerHTML='<div class="lock"><h3>🔐 Área administrativa</h3><p class="muted" style="margin:10px 0">Introduza a senha administrativa.</p><input id="adminPassInput" type="password" placeholder="Senha administrativa"><button class="primary" onclick="unlockAdmin()">ENTRAR NA ADMINISTRAÇÃO</button><div id="adminLockMsg" class="msg"></div></div>';document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById('view-admin').classList.add('active');scrollTo(0,0);return;}}document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById('view-'+view).classList.add('active');if(view==='dashboard')renderDashboard();if(view==='planos')renderPlans();if(view==='compra')renderCompra();if(view==='levantamento')renderWithdrawal();if(view==='perfil')renderProfile();if(view==='admin')renderAdmin();scrollTo(0,0)}
+    function authMsg(t,ok=false){showMsg('authMsg',t,ok)}
+    function tab(which){const login=which==='login';document.getElementById('loginForm').classList.toggle('hidden',!login);document.getElementById('createForm').classList.toggle('hidden',login);document.getElementById('tabLogin').classList.toggle('active',login);document.getElementById('tabCreate').classList.toggle('active',!login);document.getElementById('authMsg').className='msg'}
+    document.getElementById('tabLogin').onclick=()=>tab('login');document.getElementById('tabCreate').onclick=()=>tab('create');
+    document.getElementById('loginBtn').onclick=async()=>{const id=document.getElementById('loginId').value;const p=document.getElementById('loginPass').value;if(!id||!p)return authMsg('Preencha os dados de acesso.');try{login(id,p);go('dashboard')}catch(e){authMsg('Telefone ou senha incorretos.')}};
+    document.getElementById('createBtn').onclick=async()=>{const n=document.getElementById('nome').value.trim();const t=document.getElementById('tel').value;const p=document.getElementById('pass').value;const p2=document.getElementById('pass2').value;if(n.length<2)return authMsg('Informe o seu nome completo.');if(norm(t).length<7)return authMsg('Informe um número de telefone válido.');if(p.length<6)return authMsg('A senha deve ter pelo menos 6 caracteres.');if(p!==p2)return authMsg('As senhas não coincidem.');try{createAccount({nome:n,telefone:t,senha:p,refCode:getReferralCodeFromUrl()});go('dashboard')}catch(e){authMsg(e.message==='exists'?'Este número já possui uma conta.':'Não foi possível criar a conta.')}};
+    document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));document.getElementById('logoutBtn').onclick=()=>logout();
+
+    function renderDashboard(){ensureReferralCodes();const p=getUserProfile();document.getElementById('dashNome').textContent=p?.nome||'Utilizador';document.getElementById('dashSaldo').textContent=fmt(p?.saldo??50);renderReferral();document.getElementById('admBtn').classList.toggle('hidden',!isAdmin());const c=getLatest('compras');if(!c||c.estado!=='Confirmado'){document.getElementById('dashPlano').innerHTML='<div class="card"><h3>📊 Plano ativo</h3><div class="empty">Nenhum plano confirmado no momento.</div></div>';return}const d=new Date(c.dataAtivacao||c.dataConfirmacao),dias=isNaN(d)?0:Math.max(0,Math.floor((Date.now()-d.getTime())/86400000)),acum=dias*Number(c.rendimentoDiario||0);document.getElementById('dashPlano').innerHTML=`<div class="card"><h3>📊 Plano ativo</h3><div class="row"><span>Plano</span><b>${esc(c.plano)}</b></div><div class="row"><span>Valor</span><b>${fmt(c.valor)} MT</b></div><div class="row"><span>Valor configurado/dia</span><b>${fmt(c.rendimentoDiario)} MT</b></div><div class="row"><span>Dias decorridos</span><b>${dias}</b></div><div class="row"><span>Acumulado configurado</span><b>${fmt(acum)} MT</b></div><div class="row"><span>Estado</span><span class="pill ok">Confirmado</span></div><div class="notice">Valor configurado do protótipo; não é adicionado automaticamente ao saldo.</div></div>`;}
+    function renderPlans(){const lista=document.getElementById('listaPlanos');lista.innerHTML='';plans().forEach(p=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<div class="plan-icon">${p.icone}</div><div class="plan-title">${esc(p.nome)}</div><div class="row"><span>Valor</span><b class="plan-price">${fmt(p.valor)} MT</b></div><div class="row"><span>Configurado/dia</span><b class="plan-return">${fmt(p.rendimentoDiario)} MT/dia</b></div><button class="primary">COMPRAR</button>`;d.querySelector('button').onclick=()=>{sessionStorage.setItem('nexora_compra',JSON.stringify({nome:p.nome,valor:p.valor}));go('compra')};lista.appendChild(d)})}
+    function renderCompra(){let s;try{s=JSON.parse(sessionStorage.getItem('nexora_compra')||'null')}catch{}const p=s?findPlan(s.nome,s.valor):null;if(!p){document.getElementById('compraConteudo').innerHTML='<div class="card"><h3>Plano indisponível</h3><button class="primary" onclick="go(\'planos\')">VER PLANOS</button></div>';return}document.getElementById('compraConteudo').innerHTML=`<div class="card"><h3>${p.nome}</h3><div class="row"><span>Valor</span><b>${fmt(p.valor)} MT</b></div><div class="row"><span>Configurado/dia</span><b>${fmt(p.rendimentoDiario)} MT/dia</b></div></div><div class="card"><div class="mpesa"><b>📱 Instruções de pagamento</b><p>Envie o valor para:</p><div class="number">858861983</div><b>LEANDRO MABOTE</b></div><label>Seu número M-Pesa</label><input id="compTel" type="tel"><label>Referência da transação</label><input id="compRef" type="text"><button id="compBtn" class="primary">ENVIAR SOLICITAÇÃO</button><div id="compMsg" class="msg"></div></div>`;document.getElementById('compBtn').onclick=async()=>{const compTel=document.getElementById('compTel');const compRef=document.getElementById('compRef');if(norm(compTel.value).length<7||!compRef.value.trim())return showMsg('compMsg','Informe o número M-Pesa e a referência.');try{document.getElementById('compBtn').disabled=true;await createPurchase({plano:p.nome,valor:p.valor,rendimentoDiario:p.rendimentoDiario,telefone:compTel.value.trim(),referencia:compRef.value.trim()});sessionStorage.removeItem('nexora_compra');showMsg('compMsg','Solicitação recebida. Aguardando confirmação.',true)}catch(e){showMsg('compMsg',friendlyError(e))}finally{document.getElementById('compBtn').disabled=false}}}
+    document.getElementById('depBtn').onclick=async()=>{const depValor=document.getElementById('depValor');const depTel=document.getElementById('depTel');const depRef=document.getElementById('depRef');const depConfirm=document.getElementById('depConfirm');const v=Number(depValor.value);if(v<=0||norm(depTel.value).length<7||!depRef.value.trim())return showMsg('depMsg','Preencha o valor, o número M-Pesa e a referência da transação.');if(!depConfirm.checked)return showMsg('depMsg','Marque a confirmação de que a transferência foi realizada.');try{document.getElementById('depBtn').disabled=true;await createDeposit({valor:v,telefone:depTel.value.trim(),referencia:depRef.value.trim(),confirmadoPeloUtilizador:true});showMsg('depMsg','✅ Transferência registrada. O pedido está aguardando confirmação do ADM. O saldo não foi alterado.',true);depValor.value='';depTel.value='';depRef.value='';depConfirm.checked=false}catch(e){showMsg('depMsg',friendlyError(e))}finally{document.getElementById('depBtn').disabled=false}};
+    function renderWithdrawal(){const p=getUserProfile();document.getElementById('levSaldo').textContent=fmt(p?.saldo??50);document.getElementById('levNome').value=p?.nome||'';document.getElementById('levBtn').onclick=async()=>{const levValor=document.getElementById('levValor');const levTel=document.getElementById('levTel');const levNome=document.getElementById('levNome');const v=Number(levValor.value);if(v<=0)return showMsg('levMsg','Digite um valor válido.');if(v>Number(getUserProfile()?.saldo??50))return showMsg('levMsg','O valor solicitado excede o saldo disponível.');if(norm(levTel.value).length<7||!levNome.value.trim())return showMsg('levMsg','Preencha os dados de recebimento.');if(getLatest('levantamentos')?.estado==='Aguardando confirmação')return showMsg('levMsg','Já existe uma solicitação em análise.');try{document.getElementById('levBtn').disabled=true;await createWithdrawal({valor:v,telefone:levTel.value.trim(),nome:levNome.value.trim()});showMsg('levMsg','Solicitação recebida. Aguardando confirmação.',true);levValor.value='';levTel.value='';}catch(e){showMsg('levMsg',friendlyError(e))}finally{document.getElementById('levBtn').disabled=false}}}
+    function renderProfile(){const p=getUserProfile();document.getElementById('profNome').textContent=p?.nome||'Utilizador';document.getElementById('profTel').textContent=p?.telefone||'--';document.getElementById('profNome2').textContent=p?.nome||'--';document.getElementById('profTel2').textContent=p?.telefone||'--';document.getElementById('profSaldo').textContent=fmt(p?.saldo??50);document.getElementById('avatar').textContent=(p?.nome||'N')[0].toUpperCase();const cs=getMyDocs('compras'),ds=getMyDocs('depositos'),ls=getMyDocs('levantamentos');let h='';if(cs[0])h+=card('📊 Último plano',[['Plano',cs[0].plano],['Valor',fmt(cs[0].valor)+' MT'],['Estado',cs[0].estado]]);if(ds[0])h+=card('💰 Último depósito',[['Valor',fmt(ds[0].valor)+' MT'],['Referência',ds[0].referencia],['Estado',ds[0].estado]]);if(ls[0])h+=card('💸 Último levantamento',[['Valor',fmt(ls[0].valor)+' MT'],['Telefone',ls[0].telefone],['Estado',ls[0].estado]]);document.getElementById('profPedidos').innerHTML=h||'<div class="card empty">Ainda não existem solicitações.</div>'}
+    function card(t,rows){return '<div class="card"><h3>'+t+'</h3>'+rows.map(r=>'<div class="row"><span>'+esc(r[0])+'</span><b>'+esc(r[1])+'</b></div>').join('')+'</div>'}
+    function unlockAdmin(){const input=document.getElementById("adminPassInput");if(!input)return;if(input.value===getAdminPassword()){sessionStorage.setItem("nexora_admin_ok","1");renderAdmin();}else{showMsg("adminLockMsg","Senha administrativa incorreta.");}}
+    function renderAdmin(){if(!isAdmin()){document.getElementById('adminConteudo').innerHTML='<div class="lock"><h3>🔒 Acesso restrito</h3></div>';return}const list=getAdminRequests();if(!list.length){document.getElementById('adminConteudo').innerHTML='<div class="card empty">Nenhuma solicitação pendente.</div>';return}document.getElementById('adminConteudo').innerHTML=list.map(x=>{const label=x.type==='deposito'?'💰 Depósito':x.type==='levantamento'?'💸 Levantamento':'📊 Compra de plano';return `<div class="admin-card card"><h3>${label}</h3><div class="row"><span>Valor</span><b>${fmt(x.valor)} MT</b></div><div class="row"><span>Telefone</span><b>${esc(x.telefone)}</b></div><div class="row"><span>Referência</span><b>${esc(x.referencia||x.nome||'--')}</b></div><div class="admin-actions"><button class="success" onclick="adminAct('${x.type}','${x.id}','a')">APROVAR</button><button class="danger" onclick="adminAct('${x.type}','${x.id}','r')">REPROVAR</button></div></div>`}).join('')}
+    async function adminAct(t,id,a){try{if(a==='a')await approveRequest(t,id);else await rejectRequest(t,id);showMsg('adminMsg',a==='a'?'Solicitação aprovada.':'Solicitação reprovada.',true);renderAdmin()}catch(e){showMsg('adminMsg',e.message==='saldo'?'Saldo insuficiente.':friendlyError(e))}}
+    ensureReferralCodes();if(localStorage.getItem('nexora_sessao'))go('dashboard');else if(getReferralCodeFromUrl())authMsg('Você recebeu um convite. Crie a sua conta para participar do bônus de convite.',true);
+  </script>
+</body>
+</html>
